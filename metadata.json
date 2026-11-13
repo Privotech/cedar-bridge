@@ -1,0 +1,6 @@
+{
+  "name": "Cedar Ridge — Surveyed Land Plots & Site Inspections",
+  "description": "One-page land listing showcasing available plot sizes, transparent pricing, site photography, an interactive location map, inspection booking, and direct WhatsApp contact.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cedar Ridge — Surveyed Land Plots &amp; Site Inspections</title>
+  <meta name="description" content="Explore surveyed land plots with transparent sizes, pricing, site photography, an interactive location map, and instant inspection booking or WhatsApp inquiry." />
+  <meta property="og:title" content="Cedar Ridge — Surveyed Land Plots &amp; Site Inspections" />
+  <meta property="og:description" content="Explore surveyed land plots with transparent sizes, pricing, site photography, an interactive location map, and instant inspection booking or WhatsApp inquiry." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/styles.css" />
+
+  <script>
+    window.__GOOGLE_MAPS_API_KEY__ = "";
+
+    window.gm_authFailure = function () {
+      window.dispatchEvent(new CustomEvent("gmp-quota-exceeded"));
+    };
+
+    (function () {
+      var origError = console.error;
+      console.error = function () {
+        origError.apply(console, arguments);
+        var msg = Array.prototype.slice.call(arguments).map(String).join(" ");
+        if (msg.indexOf("OverQuotaMapError") !== -1 || msg.indexOf("QuotaExceededError") !== -1) {
+          window.dispatchEvent(new CustomEvent("gmp-quota-exceeded"));
+        }
+      };
+    })();
+  </script>
+</head>
+<body>
+  <div id="gmp-quota-banner" class="quota-banner" role="alert" hidden>
+    <span>
+      Google Maps Platform quota reached. If you are the app owner, visit
+      <a
+        href="https://developers.google.com/maps/ai/ai-studio?utm_campaign=gmp_mcp_codeassist_v1_aistudio#quota_exceeded_errors"
+        target="_blank"
+        rel="noopener noreferrer"
+      >maps developer site</a>
+      for instructions to update your account.
+    </span>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand-wordmark">Cedar Ridge</a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#plots">Plots</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#location">Location</a>
+        <a href="#inspection">Inspection</a>
+      </nav>
+
+      <div class="header-action">
+        <a href="#inspection" class="btn btn-primary" data-book-general>Book Inspection</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow-line">
+            <span>Freehold Title</span>
+            <span aria-hidden="true">·</span>
+            <span>Surveyed Parcels</span>
+            <span aria-hidden="true">·</span>
+            <span>Direct Owner Sale</span>
+          </p>
+          <h1 class="hero-title">Elevated Meadow &amp; Woodland Plots Ready to Build</h1>
+          <p class="hero-lead">
+            Four privately held, boundary-pegged residential parcels ranging from 550 sqm to 2,400 sqm with sealed road frontage, mains power access, and clear survey plans.
+          </p>
+          <div class="hero-actions">
+            <a href="#inspection" class="btn btn-primary btn-lg" data-book-general>Book Site Inspection</a>
+            <a
+              id="hero-whatsapp-link"
+              href="https://wa.me/15125550194?text=Hi%2C%20I%20would%20like%20to%20inquire%20about%20the%20land%20plots%20at%20Cedar%20Ridge."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-whatsapp btn-lg"
+            >
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+              <span>WhatsApp Seller</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <div class="media-frame hero-frame">
+            <img
+              src="/images/hero-aerial.jpg"
+              alt="Aerial golden hour view of Cedar Ridge rolling green pasture parcels, mature oak trees, and paved access road"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <dl class="specs-strip">
+          <div class="spec-item">
+            <dt>Available Parcels</dt>
+            <dd class="mono-num">4 of 5 Plots</dd>
+          </div>
+          <div class="spec-item">
+            <dt>Plot Size Range</dt>
+            <dd class="mono-num">550 – 2,400 sqm</dd>
+          </div>
+          <div class="spec-item">
+            <dt>Starting Price</dt>
+            <dd class="mono-num">$68,000</dd>
+          </div>
+          <div class="spec-item">
+            <dt>Tenure &amp; Readiness</dt>
+            <dd class="mono-num">Freehold · Pegged</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="plots" class="section-block">
+      <div class="container">
+        <div class="section-header-row">
+          <div>
+            <p class="section-kicker">01. Parcel Schedule</p>
+            <h2 class="section-title">Plot Sizes &amp; Transparent Pricing</h2>
+            <p class="section-subtitle">Select any parcel to inspect its dimensions, frontage, and price per square meter, or reserve a private site walkthrough.</p>
+          </div>
+
+          <div class="filter-bar" role="tablist" aria-label="Filter land plots">
+            <button type="button" class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">All Plots</button>
+            <button type="button" class="filter-btn" data-filter="available" role="tab" aria-selected="false">Available</button>
+            <button type="button" class="filter-btn" data-filter="residential" role="tab" aria-selected="false">Standard Lots</button>
+            <button type="button" class="filter-btn" data-filter="estate" role="tab" aria-selected="false">Corner &amp; Acreage</button>
+          </div>
+        </div>
+
+        <div id="plots-grid" class="plots-grid"></div>
+
+        <div class="table-section">
+          <div class="table-header-bar">
+            <h3>Side-by-Side Plot Specifications</h3>
+            <span class="table-note">All dimensions verified by licensed land survey</span>
+          </div>
+          <div class="table-scroll">
+            <table class="plots-table">
+              <thead>
+                <tr>
+                  <th>Plot ID</th>
+                  <th>Parcel Type</th>
+                  <th>Area</th>
+                  <th>Dimensions</th>
+                  <th>Road Frontage</th>
+                  <th>Price</th>
+                  <th>Rate / sqm</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="plots-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section-block section-alt">
+      <div class="container">
+        <div class="section-header-row">
+          <div>
+            <p class="section-kicker">02. Site Photography</p>
+            <h2 class="section-title">Ground Conditions, Road Frontage &amp; Views</h2>
+            <p class="section-subtitle">Recent site photographs showing access grading, boundary stakes, mature tree cover, and valley elevation. Click any image to enlarge.</p>
+          </div>
+        </div>
+
+        <div id="gallery-grid" class="gallery-grid"></div>
+      </div>
+    </section>
+
+    <section id="location" class="section-block">
+      <div class="container">
+        <div class="section-header-row">
+          <div>
+            <p class="section-kicker">03. Location &amp; Access</p>
+            <h2 class="section-title">Interactive Parcel Map</h2>
+            <p class="section-subtitle">Explore individual plot pin locations, inspect satellite or terrain topography, and check real nearby amenities.</p>
+          </div>
+
+          <div class="map-controls-bar">
+            <div class="segmented-control" role="group" aria-label="Map view type">
+              <button type="button" class="seg-btn is-active" data-map-type="hybrid">Satellite</button>
+              <button type="button" class="seg-btn" data-map-type="terrain">Terrain</button>
+              <button type="button" class="seg-btn" data-map-type="roadmap">Road Map</button>
+            </div>
+            <button type="button" id="load-nearby-btn" class="btn btn-outline btn-sm">Find Nearby Essentials</button>
+            <a
+              id="directions-link"
+              href="https://www.google.com/maps/search/?api=1&query=30.3075,-97.9288"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-outline btn-sm"
+            >Open in Google Maps</a>
+          </div>
+        </div>
+
+        <div class="map-layout">
+          <div class="map-canvas-wrap">
+            <div id="map" class="map-canvas" aria-label="Interactive land location map"></div>
+            <div id="map-fallback" class="map-fallback" hidden>
+              <p class="map-fallback-title">Interactive Map Unavailable</p>
+              <p id="map-fallback-reason" class="map-fallback-copy">Unable to initialize Google Maps in this session. Use the parcel coordinates or open directly in Google Maps.</p>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=30.3075,-97.9288"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+              >Open Location in Google Maps</a>
+            </div>
+          </div>
+
+          <aside class="map-sidebar">
+            <div class="sidebar-block">
+              <h3 class="sidebar-heading">Select Parcel Pin</h3>
+              <p class="sidebar-help">Click a plot below to center the map and inspect its details.</p>
+              <ul id="map-plot-list" class="map-plot-list"></ul>
+            </div>
+
+            <div class="sidebar-block sidebar-divider">
+              <h3 class="sidebar-heading">Site Coordinates</h3>
+              <p class="mono-num coord-line">30.3075° N, 97.9288° W</p>
+              <p class="sidebar-help">Paved county road access directly off main ridge corridor. Boundary pegs visible on site.</p>
+            </div>
+
+            <div id="nearby-panel" class="sidebar-block sidebar-divider" hidden>
+              <h3 class="sidebar-heading">Nearby Essentials</h3>
+              <p id="nearby-status" class="sidebar-help">Loading nearby places...</p>
+              <ul id="nearby-list" class="nearby-list"></ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="inspection" class="section-block section-alt">
+      <div class="container inspection-layout">
+        <div class="contact-column">
+          <p class="section-kicker">04. Direct Viewing &amp; Inquiry</p>
+          <h2 class="section-title">Book a Private Site Inspection or Message Directly</h2>
+          <p class="section-subtitle">
+            Walk the boundaries in person, review original survey plans, and verify road and utility connections directly with the seller. Daily viewings are available by appointment from 8:00 AM to 6:00 PM.
+          </p>
+
+          <div class="direct-whatsapp-panel">
+            <h3>Prefer Instant Chat?</h3>
+            <p>Message directly on WhatsApp to request the survey PDF, ask about flexible closing terms, or confirm today's viewing times.</p>
+
+            <div class="whatsapp-primary-row">
+              <a
+                id="direct-whatsapp-cta"
+                href="https://wa.me/15125550194?text=Hi%2C%20I%20would%20like%20to%20book%20an%20inspection%20or%20get%20more%20details%20about%20Cedar%20Ridge%20land%20plots."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-whatsapp btn-lg"
+              >
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                </svg>
+                <span>Message on WhatsApp</span>
+              </a>
+
+              <button type="button" id="copy-phone-btn" class="btn btn-outline">
+                Copy Number: <span class="mono-num">+1 (512) 555-0194</span>
+              </button>
+            </div>
+            <p id="copy-feedback" class="copy-feedback" aria-live="polite"></p>
+
+            <div class="quick-prompts">
+              <span class="quick-prompts-label">Quick WhatsApp messages:</span>
+              <div class="quick-prompts-row">
+                <a
+                  href="https://wa.me/15125550194?text=Hi%2C%20please%20send%20the%20land%20survey%20plan%20PDF%20and%20title%20details%20for%20Cedar%20Ridge."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="prompt-link"
+                >Request survey PDF</a>
+                <a
+                  href="https://wa.me/15125550194?text=Hi%2C%20are%20there%20payment%20plan%20or%20deposit%20options%20for%20the%20Cedar%20Ridge%20plots%3F"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="prompt-link"
+                >Ask payment terms</a>
+                <a
+                  href="https://wa.me/15125550194?text=Hi%2C%20can%20I%20visit%20Cedar%20Ridge%20for%20a%20site%20walkthrough%20this%20week%3F"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="prompt-link"
+                >Check this week's slots</a>
+              </div>
+            </div>
+          </div>
+
+          <ul class="walkthrough-checklist">
+            <li>Boundary corner stakes marked and visible on every parcel</li>
+            <li>Printed cadastral survey map and utility easement overview provided on site</li>
+            <li>Direct owner negotiation with zero broker commission markup</li>
+          </ul>
+        </div>
+
+        <div class="form-column">
+          <div class="booking-surface">
+            <form id="inspection-form" novalidate>
+              <div class="form-head">
+                <h3>Schedule a Site Inspection</h3>
+                <p>Select your preferred plot and viewing window.</p>
+              </div>
+
+              <div class="form-grid">
+                <div class="field-group field-full">
+                  <label for="plot-select">Plot of Interest</label>
+                  <select id="plot-select" name="plotId" required></select>
+                </div>
+
+                <div class="field-group">
+                  <label for="visit-date">Preferred Date</label>
+                  <input type="date" id="visit-date" name="visitDate" required />
+                </div>
+
+                <div class="field-group">
+                  <label for="visit-time">Time Window</label>
+                  <select id="visit-time" name="visitTime" required>
+                    <option value="09:00 AM">Morning (09:00 AM)</option>
+                    <option value="12:30 PM">Midday (12:30 PM)</option>
+                    <option value="04:00 PM">Afternoon (04:00 PM)</option>
+                  </select>
+                </div>
+
+                <div class="field-group">
+                  <label for="buyer-name">Your Full Name</label>
+                  <input type="text" id="buyer-name" name="buyerName" placeholder="e.g. Daniel Carter" required />
+                </div>
+
+                <div class="field-group">
+                  <label for="buyer-phone">Phone / WhatsApp</label>
+                  <input type="tel" id="buyer-phone" name="buyerPhone" placeholder="+1 512 555 0140" required />
+                </div>
+
+                <div class="field-group field-full">
+                  <label for="buyer-email">Email Address</label>
+                  <input type="email" id="buyer-email" name="buyerEmail" placeholder="daniel@example.com" required />
+                </div>
+
+                <div class="field-group field-full">
+                  <label for="buyer-notes">Questions or Notes (Optional)</label>
+                  <textarea id="buyer-notes" name="buyerNotes" rows="3" placeholder="Mention if you are bringing a builder, surveyor, or want to inspect multiple plots."></textarea>
+                </div>
+              </div>
+
+              <p id="form-error" class="form-error" role="alert" hidden></p>
+
+              <button type="submit" class="btn btn-primary btn-full">Confirm Inspection Request</button>
+            </form>
+
+            <div id="booking-confirmation" class="booking-confirmation" hidden>
+              <p class="confirm-kicker">Inspection Request Recorded</p>
+              <h3>Your Walkthrough Is Reserved</h3>
+              <p id="confirm-summary" class="confirm-summary"></p>
+
+              <div class="confirm-actions">
+                <a id="confirm-whatsapp-send" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">Send Details via WhatsApp</a>
+                <button type="button" id="download-ics-btn" class="btn btn-outline">Add to Calendar (.ics)</button>
+                <button type="button" id="reset-booking-btn" class="btn-text">Book Another Viewing</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand-block">
+        <span class="footer-wordmark">Cedar Ridge</span>
+        <p class="footer-legal">
+          Surveyed residential and acreage land parcels. Maps powered by Google Maps Platform, subject to the
+          <a href="https://maps.google.com/help/terms_maps/?utm_campaign=gmp_mcp_codeassist_v1_aistudio" target="_blank" rel="noopener noreferrer">Google Maps End User Terms</a>
+          and
+          <a href="https://policies.google.com/privacy?utm_campaign=gmp_mcp_codeassist_v1_aistudio" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#plots">Plots</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#location">Location</a>
+        <a href="#inspection">Inspection</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Site photo preview" hidden>
+    <div class="lightbox-backdrop" data-lightbox-close></div>
+    <div class="lightbox-content">
+      <button type="button" class="lightbox-close" data-lightbox-close aria-label="Close photo preview">&times;</button>
+      <img id="lightbox-img" src="" alt="" referrerPolicy="no-referrer" />
+      <div class="lightbox-bar">
+        <p id="lightbox-caption"></p>
+        <div class="lightbox-nav">
+          <button type="button" id="lightbox-prev" class="btn btn-outline btn-sm">Previous</button>
+          <button type="button" id="lightbox-next" class="btn btn-outline btn-sm">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
